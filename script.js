@@ -47,8 +47,8 @@ function createCard(book) {
 
 function addNewBook() {
   const dialog = document.querySelector("dialog");
-  const closeButton = dialog.querySelector("button");
-  const addButton = dialog.querySelector("form > button");
+  const closeButton = dialog.querySelector("#cancel");
+  const addButton = dialog.querySelector("#add");
 
   // "Cancel" button closes the dialog
   closeButton.addEventListener("click", () => {
@@ -66,9 +66,8 @@ function addNewBook() {
     const newBook = new Book(title, author, pages, read);
     addBookToLibrary(newBook);
     createCard(newBook);
-    dialog.close();
-    console.log(myLibrary);
     form.reset();
+    dialog.close();
   });
 }
 
