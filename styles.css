@@ -39,18 +39,21 @@ h1 {
   align-content: center;
 }
 
-.add-book > .card > button {
-  font-size: 14px;
+.add-book-btn {
+  font-size: 18px;
   font-weight: bold;
-  margin: 100px;
-  padding: 18px;
+  height: 225px;
+  width: 300px;
+  margin: 25px;
   border: 0;
   border-radius: 8px;
-  background-color: #68b0ab;
-  color: #ffffff;
+  background-color: #bfd9d7;
+  border: 1px dashed rgb(54, 54, 54);
+  box-shadow: 5px 5px 5px rgb(204, 204, 204);
+  opacity: 0.6;
 }
 
-.add-book > .card > button:hover {
+.add-book-btn:hover {
   opacity: 0.8;
   transition: 0.3s;
 }
@@ -71,11 +74,6 @@ h1 {
   margin: 25px;
 }
 
-#new-card {
-  border: 1px dashed grey;
-  background-color: rgb(244, 244, 244);
-  opacity: 0.7;
-}
 .card > h3,
 .card > p,
 .card > div {
