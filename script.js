@@ -6,14 +6,78 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function () {
-    let read = "not read yet";
-    if (this.read) {
-      read = "read already";
-    }
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${read}`;
-  };
-
-function addBookToLibrary() {
-  
 }
+
+function addBookToLibrary(newBook) {
+  myLibrary.push(newBook);
+}
+
+function displayBooks() {
+  myLibrary.forEach((book) => {
+    createCard(book);
+  });
+}
+
+function createCard(book) {
+  const booksSection = document.querySelector(".books");
+  const addBookBtn = booksSection.querySelector(".add-book");
+  const newBook = document.createElement("div");
+  newBook.classList.add("card");
+
+  newBook.innerHTML = `
+    <h3>${book.title}</h3>
+    <p>by ${book.author}</p>
+    <p>${book.pages} pages</p>
+    <div>
+      <input type="checkbox" id="read-${book.title}" name="${book.title}" ${
+    book.read ? "checked" : ""
+  }>
+      <label for="read-${book.title}"> Read </label>
+    </div>
+  `;
+
+  booksSection.insertBefore(newBook, addBookBtn);
+
+  // Add event listener to update book's read status when checkbox is clicked
+  const checkbox = newBook.querySelector(`#read-${book.title}`);
+  checkbox.addEventListener("change", function () {
+    book.read = this.checked;
+  });
+}
+
+function addNewBook() {
+  const dialog = document.querySelector("dialog");
+  const closeButton = dialog.querySelector("button");
+  const addButton = dialog.querySelector("form > button");
+
+  // "Cancel" button closes the dialog
+  closeButton.addEventListener("click", () => {
+    dialog.close();
+  });
+
+  // "Add" button creates new book
+  addButton.addEventListener("click", (e) => {
+    const form = document.querySelector("form");
+    e.preventDefault();
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let pages = document.querySelector("#pages").value;
+    let read = document.getElementById("read").checked;
+    const newBook = new Book(title, author, pages, read);
+    addBookToLibrary(newBook);
+    createCard(newBook);
+    dialog.close();
+    console.log(myLibrary);
+    form.reset();
+  });
+}
+
+// Set up event listener for the "Add book" button
+const addBookButton = document.querySelector(".add-book-btn");
+addBookButton.addEventListener("click", () => {
+  const dialog = document.querySelector("dialog");
+  dialog.showModal();
+});
+
+// Initialize event listeners
+addNewBook();

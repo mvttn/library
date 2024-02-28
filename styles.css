@@ -1,0 +1,78 @@
+/* prettier-ignore */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+.container {
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  height: 100vh;
+}
+
+.header {
+  background-image: linear-gradient(30deg, #698f94, #8ddfda);
+  color: #ffffff;
+}
+
+h1 {
+  margin: 40px;
+}
+
+.add-book {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.add-book > button {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 100px;
+  padding: 18px;
+  border: 0px;
+  border-radius: 8px;
+  background-color: #68b0ab;
+  color: #ffffff;
+}
+
+.add-book > button:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(204, 204, 204);
+  height: 225px;
+  margin: 25px;
+}
+
+.card > h3,
+.card > p,
+.card > div {
+  margin: 8px;
+}
