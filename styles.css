@@ -31,6 +31,7 @@ time, mark, audio, video {
 
 h1 {
   margin: 40px;
+  margin-left: 10px;
 }
 
 .add-book {
@@ -80,3 +81,21 @@ h1 {
   margin: 8px;
 }
 
+img {
+  width: 50px;
+  margin-left: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+dialog {
+  border-radius: 10px;
+  padding: 50px;
+}
+
+input {
+  margin: 5px;
+}
