@@ -96,6 +96,38 @@ dialog {
   padding: 50px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#read-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 input {
-  margin: 5px;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#add,
+#cancel {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 20px 10px 20px;
+  background-color: #7dbac2;
+  color: #ffffff;
+}
+
+#add:hover,
+#cancel:hover {
+  opacity: 0.7;
+  transition: 0.3s;
 }

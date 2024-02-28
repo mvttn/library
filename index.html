@@ -18,20 +18,18 @@
           <div class="add-book">
             <dialog>
               <form action="submit">
-                <input type="text" id="title" name="title" placeholder="Title" /> <br />
-                <input type="text" id="author" name="author" placeholder="Author" /><br />
-                <input
-                  type="number"
-                  id="pages"
-                  name="pages"
-                  placeholder="No. Of Pages"
-                  min="5"
-                /><br />
-                <label for="read">Read</label>
-                <input type="checkbox" id="read" name="read" /><br />
-                <button type="submit" id="add">Add</button>
+                <input type="text" id="title" name="title" placeholder="Title" />
+                <input type="text" id="author" name="author" placeholder="Author" />
+                <input type="number" id="pages" name="pages" placeholder="No. Of Pages" min="5" />
+                <div id="read-input">
+                  <label for="read">Have you read it?</label>
+                  <input type="checkbox" id="read" name="read" />
+                </div>
+                <div>
+                  <button type="submit" id="add">Add</button>
+                  <button id="cancel">Cancel</button>
+                </div>
               </form>
-              <button id="cancel">Cancel</button>
             </dialog>
             <button class="add-book-btn">Add Book</button>
           </div>

@@ -29,10 +29,10 @@ function createCard(book) {
     <p>by ${book.author}</p>
     <p>${book.pages} pages</p>
     <div>
+      <label for="read-${book.title}"> Read </label>
       <input type="checkbox" id="read-${book.title}" name="${book.title}" ${
     book.read ? "checked" : ""
   }>
-      <label for="read-${book.title}"> Read </label>
     </div>
   `;
 
@@ -51,7 +51,8 @@ function addNewBook() {
   const addButton = dialog.querySelector("#add");
 
   // "Cancel" button closes the dialog
-  closeButton.addEventListener("click", () => {
+  closeButton.addEventListener("click", (e) => {
+    e.preventDefault();
     dialog.close();
   });
 
