@@ -24,18 +24,21 @@ function createCard(book) {
   const newBook = document.createElement("div");
   newBook.classList.add("card");
 
+  // Setting id to corresponding index in myLibrary array
+  newBook.id = (myLibrary.length - 1).toString();
+
   newBook.innerHTML = `
     <h3>${book.title}</h3>
     <p>by ${book.author}</p>
     <p>${book.pages} pages</p>
     <div>
       <label for="read-${book.title}"> Read </label>
-      <input type="checkbox" id="read-${book.title}" name="${book.title}" ${
-    book.read ? "checked" : ""
-  }>
+      <input type="checkbox" id="read-${book.title}" name="${book.title}" 
+      ${book.read ? "checked" : ""}>
     </div>
+    <button id="remove">Remove</button>
   `;
-
+  // Insert the card before "Add New Book" button
   booksSection.insertBefore(newBook, addBookBtn);
 
   // Add event listener to update book's read status when checkbox is clicked
@@ -71,6 +74,8 @@ function addNewBook() {
     dialog.close();
   });
 }
+
+function removeBook(id) {}
 
 // Set up event listener for the "Add book" button
 const addBookButton = document.querySelector(".add-book-btn");
