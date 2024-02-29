@@ -50,7 +50,6 @@ h1 {
   border-radius: 8px;
   background-color: #bfd9d7;
   border: 1px dashed rgb(54, 54, 54);
-  box-shadow: 5px 5px 5px rgb(204, 204, 204);
   opacity: 0.6;
 }
 
@@ -92,6 +91,7 @@ img {
 }
 
 dialog {
+  border: 0;
   border-radius: 10px;
   padding: 50px;
 }
@@ -101,6 +101,10 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+label[for="read"] {
+  font-size: 13px;
 }
 
 #read-input {
