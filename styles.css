@@ -121,7 +121,8 @@ input {
 }
 
 #add,
-#cancel {
+#cancel,
+#remove {
   margin-top: 10px;
   border-radius: 5px;
   border: 0;
@@ -130,8 +131,14 @@ input {
   color: #ffffff;
 }
 
+#cancel,
+#remove {
+  background-color: #da5959;
+}
+
 #add:hover,
-#cancel:hover {
+#cancel:hover,
+#remove:hover {
   opacity: 0.7;
   transition: 0.3s;
 }
