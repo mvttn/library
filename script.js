@@ -25,7 +25,7 @@ function createCard(book) {
   newBook.classList.add("card");
 
   // Setting id to corresponding index in myLibrary array
-  newBook.id = (myLibrary.length - 1).toString();
+  newBook.id = "book" + (myLibrary.length - 1).toString();
 
   newBook.innerHTML = `
     <h3>${book.title}</h3>
@@ -46,6 +46,13 @@ function createCard(book) {
   checkbox.addEventListener("change", function () {
     book.read = this.checked;
   });
+
+  // Set up event listener for the "Remove" button
+  const removeBookButton = newBook.querySelector("#remove");
+  removeBookButton.addEventListener("click", () => {
+    console.log(newBook.id);
+    removeBook(newBook.id);
+  });
 }
 
 function addNewBook() {
@@ -61,8 +68,8 @@ function addNewBook() {
 
   // "Add" button creates new book
   addButton.addEventListener("click", (e) => {
-    const form = document.querySelector("form");
     e.preventDefault();
+    const form = document.querySelector("form");
     let title = document.querySelector("#title").value;
     let author = document.querySelector("#author").value;
     let pages = document.querySelector("#pages").value;
@@ -75,7 +82,10 @@ function addNewBook() {
   });
 }
 
-function removeBook(id) {}
+function removeBook(id) {
+  const bookToRemove = document.querySelector("#" + id);
+  bookToRemove.remove();
+}
 
 // Set up event listener for the "Add book" button
 const addBookButton = document.querySelector(".add-book-btn");
